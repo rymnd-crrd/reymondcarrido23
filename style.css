@@ -152,9 +152,10 @@ span{
     cursor: pointer;
 }
 .btn:hover{
-    transform: scale(1.5);
+    transform: scale(1.1);
     box-shadow: 0 0 25px var(--main-color);
 }
+
 .about{
     display: flex;
     justify-content: center;
@@ -208,6 +209,7 @@ span{
     background-color: var(--bg-color);
     width: 50px;
 }
+
 .education{
     background: var(--bg-color);
     color: white;
@@ -218,20 +220,20 @@ span{
 }
 .education-container{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(4,1fr);
     gap: 2.5rem;
 }
 .education-box{
     background-color: var(--main-color);
     color: black;
     height: 250px;
+    width: 300px;
     border-radius: 3rem;
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
 .education-box:hover{
     background: white;
-    color: var(--main-color);
     transform: scale(1.03);
 }
 .education-box .education-info{
@@ -254,46 +256,119 @@ span{
     max-height: 100px;
     margin: auto;
 }
-.contact{
-    background-color: var(--second-bg-color);
+
+.skills{
+    background: var(--bg-color);
+    color: white;
+    padding-top: 100px;
 }
-.contact h2{
-    margin-bottom: 3rem;
+.skills h2{
+    margin-bottom: 5rem;
     color: white;
 }
-.contact-form{
-    max-width: 70rem;
-    margin: 1rem auto;
-    text-align: center;
-    margin-bottom: 3rem;
-    position: relative;
-    width: 600px;
+.skills-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2.5rem;
+    width: fit-content;
 }
-.contact form .input-box{
+.skills-box{
+    background-color: var(--main-color);
+    color: black;
+    height: 350px;
+    border-radius: 3rem;
+    width: 300px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.skills-box:hover{
+    background: white;
+    transform: scale(1.03);
+}
+.skills-box .skills-info{
     display: flex;
+    flex-direction: column;
+    text-align: left;
+    max-height: 200px;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: baseline;
+    padding: 5rem;
 }
-.contact form .input-box input,
-.contact form textarea{
-    width: 100%;
-    padding: 20px;
+.skills-info h4{
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.skills-info p{
     font-size: 1.6rem;
-    color: var(--text-color);
-    background: var(--second-bg-color);
-    border-radius: 8px;
-    border: 0 2px solid var(--main-color);
-    outline: none;
+    font-weight: 400;
+    max-height: 100px;
+    margin: auto;
+}
+
+.contact {
+    background-color: black;
+    padding-top: 130px;
+    text-align: center;
+}
+
+.contact .heading {
+    margin-bottom: 40px;
+    color: white;
+    font-size: 36px;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact .input-box {
     margin-bottom: 20px;
 }
-.contact form .btn{
-    margin-top: 2rem
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+    width: calc(100% - 40px);
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
 }
+
+.contact textarea {
+    height: 150px;
+}
+
+.contact input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.contact input[type="submit"]:hover {
+    background-color: aquamarine;
+}
+
+/* Adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+    .contact form {
+        width: 90%;
+    }
+}
+
+
 .footer{
     position: relative;
     bottom: 0;
     width: 100%;
-    padding: 40px 0;
+    padding: 20px ;
     background-color: var(--bg-color);
 }
 .footer .social-icons{
@@ -349,89 +424,56 @@ span{
     color: white;
 }
 @media(max-width:1285px){
-    html{
-        font-size: 55%;
+    .header {
+        padding: 2rem 5%;
     }
-    .education-container{
-        padding-bottom: 7rem;
-        grid-template-columns: repeat(2,1fr);
-        margin: 0 5rem;
+    .home {
+        margin: 3rem 5%;
+    }
+    .home-content h1 {
+        font-size: 6rem;
+    }
+    .about-img img {
+        width: 100%;
+    }
+    .education-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 @media(max-width:991px){
-    header{
+    .header {
         padding: 2rem 3%;
     }
-    section{
-        padding: 10rem 3% 2rem;
+    .home {
+        margin: 3rem 3%;
     }
-    .education{
-        padding-bottom: 7rem;
+    .home-content h1 {
+        font-size: 5rem;
     }
-    .footer{
-        padding: 2rem 3%;
+    .about-img img {
+        width: 80%;
+    }
+    .education-container {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 @media(max-width:895px){
-    #menu-icon{
-        display: block;
+    .header {
+        padding: 1.5rem 3%;
     }
-    .navbar{
-        position: absolute;
-        top: 100%;
-        right: 0;
-        width: 50%;
-        padding: 1rem 3%;
-        background: rgba(0, 0, 0, 0.415);
-        backdrop-filter: blur(20px);
-        border-bottom-left-radius: 2rem;
-        border-left: 2px solid var(--main-color);
-        border-bottom: 2px solid var(--main-color);
-        display: none;
+    .navbar {
+        width: 70%;
     }
-    .navbar .active{
-        display: block;
+    .home {
+        margin: 2rem 3%;
     }
-    .navbar a{
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-        color: white;
+    .home-content h1 {
+        font-size: 4rem;
     }
-    .home{
-        flex-direction: column;
-        margin: 4rem 5rem;
+    .about-img img {
+        width: 100%;
     }
-    .home-content h3{
-        font-size: 2.6rem;
-    }
-    .home-content h1{
-        font-size: 8rem;
-        margin-top: 3rem;
-    }
-    .home-content p{
-        max-width: 600px;
-        margin: 0 auto;
-    }
-    .home-img img{
-        width: 56vw;
-        margin-top: -2rem;
-    }
-    .about{
-        flex-direction: column-reverse;
-    }
-    .about-content{
-        margin: 0 2rem 4rem;
-    }
-    .about-img{
-        width: 52vw;
-        margin-top: 1rem;
-        margin-bottom: 3rem;
-    }
-    .education h2{
-        margin-bottom: 3rem;
-    }
-    .education-container{
-        grid-template-columns: repeat(1,1fr);
+    .education-container {
+        padding-bottom: 5rem;
     }
 }
